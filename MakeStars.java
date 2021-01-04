@@ -3,10 +3,18 @@ import java.util.*;
 
 public class MakeStars {
   public static void main(String[] args) {
-    Scanner myScanner = new Scanner( System.in );
+    Scanner myScanner = new Scanner (System.in);
     while (myScanner.hasNextLine()) {
-      Scanner wordScanner = new Scanner (myScanner.nextLine());
-      System.out.println(wordScanner.nextLine().length());
+      String lineData = (myScanner.nextLine());
+      Scanner newScanner = new Scanner (lineData);
+      while (newScanner.hasNext()){
+        String wordData = newScanner.next();
+        for (int i = 0; i < wordData.length(); i++) {
+          System.out.print("*");
+        }
+        System.out.print(" ");
+      }
+      System.out.print("\n");
     }
   }
 }
