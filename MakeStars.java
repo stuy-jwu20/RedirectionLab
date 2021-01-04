@@ -3,9 +3,10 @@ import java.util.*;
 
 public class MakeStars {
   public static void main(String[] args) {
-    Scanner myScanner = new Scanner(System.in);
+    Scanner myScanner = new Scanner( System.in );
     while (myScanner.hasNextLine()) {
-      System.out.println(myScanner.nextLine());
+      Scanner wordScanner = new Scanner (myScanner.nextLine());
+      System.out.println(wordScanner.nextLine());
     }
   }
 }
