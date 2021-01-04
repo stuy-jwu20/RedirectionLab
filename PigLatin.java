@@ -3,17 +3,17 @@ import java.util.*;
 
 public class PigLatin {
   public static void main(String[] args) {
-    // Scanner myScanner = new Scanner (System.in);
-    // while (myScanner.hasNextLine()) {
-    //   String lineData = (myScanner.nextLine());
-    //   Scanner newScanner = new Scanner (lineData);
-    //   while (newScanner.hasNext()){
-    //     String wordData = newScanner.next();
-    //     System.out.print(pigLatinBest(wordData));
-    //     System.out.print(" ");
-    //   }
-    //   System.out.print("\n");
-    // }
+    Scanner myScanner = new Scanner (System.in);
+    while (myScanner.hasNextLine()) {
+      String lineData = (myScanner.nextLine());
+      Scanner newScanner = new Scanner (lineData);
+      while (newScanner.hasNext()){
+        String wordData = newScanner.next();
+        System.out.print(pigLatinBest(wordData));
+        System.out.print(" ");
+      }
+      System.out.print("\n");
+    }
     //
     System.out.println(pigLatinSimple("mock"));
     System.out.println(pigLatinSimple("aaron"));
@@ -49,7 +49,7 @@ public class PigLatin {
     if (lowerS.length() >= 1) {
       String[] digraph = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
       String vowels = "aeiou";
-      if (Arrays.asList(digraph).indexOf(lowerS.substring(0,2)) != -1) {
+      if ((lowerS.length() > 1) && (Arrays.asList(digraph).indexOf(lowerS.substring(0,2)) != -1)) {
         String newWord = lowerS.substring(2,lowerS.length()) + lowerS.substring(0,2) + "ay";
         newWord.toLowerCase();
         return newWord;
