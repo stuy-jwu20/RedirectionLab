@@ -12,9 +12,9 @@ public class MakeStars {
         for (int i = 0; i < wordData.length(); i++) {
           System.out.print("*");
         }
-        System.out.print(" ");
+        if (newScanner.hasNext()) System.out.print(" ");
       }
-      System.out.print("\n");
+      if (myScanner.hasNextLine()) System.out.println();
     }
   }
 }
