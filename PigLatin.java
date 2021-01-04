@@ -5,14 +5,12 @@ public class PigLatin {
   public static void main(String[] args) {
     Scanner myScanner = new Scanner (System.in);
     while (myScanner.hasNextLine()) {
-      String lineData = (myScanner.nextLine());
-      Scanner newScanner = new Scanner (lineData);
+      Scanner newScanner = new Scanner (myScanner.nextLine());
       while (newScanner.hasNext()){
-        String wordData = newScanner.next();
-        System.out.print(pigLatinBest(wordData));
-        System.out.print(" ");
+        System.out.print(pigLatinBest(newScanner.next()));
+        if (newScanner.hasNext()) System.out.print(" ");
       }
-      System.out.print("\n");
+      if (myScanner.hasNextLine()) System.out.println();
     }
   }
 
