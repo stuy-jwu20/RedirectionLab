@@ -31,6 +31,7 @@ public class PigLatin {
       String[] digraph = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"];
       if (digraph.indexOf(s.substring(0,2)) != -1) {
         String newWord = s.substring(2,s.length()) + s.substring(0,2) + "ay";
+        newWord.toLowerCase();
         return newWord;
       }
       else if (vowels.indexOf(s.charAt(0)) != -1) {
@@ -47,6 +48,47 @@ public class PigLatin {
   }
 
   public static String pigLatinBest(String s) {
-
+    if (s.length() >= 1) {
+      String theNumbers = "123456789";
+      String nonSymbols = "abcdefghijklmnopqrstuvwxyz123456789";
+      if (theNumbers.indexOf(s.substring(0,1)) != -1) {
+        return s.toLowerCase();
+      }
+      else if (nonSymbols.indexOf(s.substring(s.length()-1, s.length())) == -1) {
+        String[] digraph = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"];
+        if (digraph.indexOf(s.substring(0,2)) != -1) {
+          String newWord = s.substring(2,s.length()-1) + s.substring(0,2) + "ay" + s.substring(s.length()-1, s.lenngth());
+          newWord = newWord.toLowerCase();
+          return newWord;
+        }
+        else if (vowels.indexOf(s.charAt(0)) != -1) {
+          String vowels = "aeiou";
+          String newWord = s.substring(0,s.length()-1) + "hay" + s.substring(s.length()-1, s.length());
+          newWord = newWord.toLowerCase();
+          return newWord;
+        } else {
+          String newWord = s.substring(1,s.length()-1) + s.substring(0,1) + "ay" + s.substring(s.length()-1, s.length());
+          newWord = newWord.toLowerCase();
+          return newWord;
+        }
+      } else {
+          String[] digraph = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"];
+          if (digraph.indexOf(s.substring(0,2)) != -1) {
+            String newWord = s.substring(2,s.length()) + s.substring(0,2) + "ay";
+            newWord.toLowerCase();
+            return newWord;
+          }
+          else if (vowels.indexOf(s.charAt(0)) != -1) {
+            String vowels = "aeiou";
+            String newWord = s + "hay";
+            newWord = newWord.toLowerCase();
+            return newWord;
+          } else {
+            String newWord = s.substring(1,s.length()) + s.substring(0,1) + "ay";
+            newWord = newWord.toLowerCase();
+            return newWord;
+          }
+      }
+    }
   }
 }
