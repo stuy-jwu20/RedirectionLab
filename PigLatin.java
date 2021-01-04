@@ -5,6 +5,10 @@ public class PigLatin {
   public static void main(String[] args) {
     System.out.println(pigLatinSimple("mock"));
     System.out.println(pigLatinSimple("aaron"));
+    //
+    System.out.println(pigLatin("the"));
+    System.out.println(pigLatin("emu"));
+    System.out.println(pigLatin("hats"));
   }
 
   public static String pigLatinSimple(string s) {
@@ -16,6 +20,7 @@ public class PigLatin {
         return newWord;
       } else {
         String newWord = s.substring(1,s.length()) + s.substring(0,1) + "ay";
+        newWord = newWord.toLowerCase();
         return newWord;
       }
     }
@@ -35,6 +40,7 @@ public class PigLatin {
         return newWord;
       } else {
         String newWord = s.substring(1,s.length()) + s.substring(0,1) + "ay";
+        newWord = newWord.toLowerCase();
         return newWord;
       }
     }
