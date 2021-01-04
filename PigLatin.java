@@ -14,17 +14,6 @@ public class PigLatin {
       }
       System.out.print("\n");
     }
-    //
-    System.out.println(pigLatinSimple("mock"));
-    System.out.println(pigLatinSimple("aaron"));
-    //
-    System.out.println(pigLatin("the"));
-    System.out.println(pigLatin("emu"));
-    System.out.println(pigLatin("science"));
-    //
-    System.out.println(pigLatinBest("4chan"));
-    System.out.println(pigLatinBest("fish!"));
-    System.out.println(pigLatinBest("science"));
   }
 
   public static String pigLatinSimple(String s) {
