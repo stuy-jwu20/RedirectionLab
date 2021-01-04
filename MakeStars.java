@@ -6,7 +6,7 @@ public class MakeStars {
     Scanner myScanner = new Scanner( System.in );
     while (myScanner.hasNextLine()) {
       Scanner wordScanner = new Scanner (myScanner.nextLine());
-      System.out.println(wordScanner.nextLine());
+      System.out.println(wordScanner.nextLine().length());
     }
   }
 }
